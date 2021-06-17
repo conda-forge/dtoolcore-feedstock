@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   preserve_egg_dir: True
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
@@ -32,6 +32,10 @@ test:
     - dtoolcore.filehasher
     - dtoolcore.storagebroker
     - dtoolcore.utils
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/{{ author }}/{{ name }}
@@ -53,3 +57,4 @@ about:
 extra:
   recipe-maintainers:
     - pvanheus
+    - jan-janssen
