@@ -1,7 +1,7 @@
 About dtoolcore
 ===============
 
-Home: http://github.com/jic-dtool/dtoolcore
+Home: https://github.com/jic-dtool/dtoolcore
 
 Package license: MIT
 
