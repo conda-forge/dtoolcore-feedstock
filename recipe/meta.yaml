@@ -1,6 +1,6 @@
 {% set name = "dtoolcore" %}
 {% set author = "jic-dtool" %}
-{% set version = "3.18.0" %}
+{% set version = "3.17.0" %}
 {% set sha256 = "cfdb0948da6e2aebec5712244395d19db66fce2a435e45ba01df432e97dd96af" %}
 
 package:
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
