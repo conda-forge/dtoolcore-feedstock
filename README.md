@@ -1,7 +1,7 @@
 About dtoolcore
 ===============
 
-Home: http://github.com/jic-dtool/dtoolcore
+Home: https://github.com/jic-dtool/dtoolcore
 
 Package license: MIT
 
@@ -130,4 +130,5 @@ Feedstock Maintainers
 
 * [@jan-janssen](https://github.com/jan-janssen/)
 * [@pvanheus](https://github.com/pvanheus/)
+* [@tjelvar-olsson](https://github.com/tjelvar-olsson/)
 
