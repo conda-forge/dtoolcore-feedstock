@@ -1,5 +1,5 @@
 {% set name = "dtoolcore" %}
-{% set version = "3.18.2" %}
+{% set version = "3.18.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4c9c526cc26df91480420e06087a85bed0c0c7c6aa270777e08c69487f277154
+  sha256: 14ffebbf0ff1b875f84fefa25bd891c4deb9a1ee5413c558225a8bf7a95305c1
 
 build:
   number: 0
