@@ -10,7 +10,7 @@ source:
   sha256: 14ffebbf0ff1b875f84fefa25bd891c4deb9a1ee5413c558225a8bf7a95305c1
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv
 
