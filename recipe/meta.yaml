@@ -1,16 +1,16 @@
 {% set name = "dtoolcore" %}
-{% set version = "3.18.3" %}
+{% set version = "3.19.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 14ffebbf0ff1b875f84fefa25bd891c4deb9a1ee5413c558225a8bf7a95305c1
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 32de6dda319002d41fc8a0b7a8835a1de37d9ca60265bf3416bc57caaba0b9f5
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv
 
@@ -21,6 +21,7 @@ requirements:
     - setuptools
     - setuptools_scm
   run:
+    - setuptools
     - python >=3.6
 
 test:
