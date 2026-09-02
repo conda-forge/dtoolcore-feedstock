@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: dtoolcore
-  version: "3.19.0"
+  version: 3.19.0
 
 package:
   name: ${{ name|lower }}
@@ -15,11 +15,11 @@ source:
 build:
   number: 2
   noarch: python
-  script: SETUPTOOLS_SCM_PRETEND_VERSION=${{ version }} ${{ PYTHON }} -m pip install . -vv
+  script: SETUPTOOLS_SCM_PRETEND_VERSION=${{ version }} ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
     - setuptools_scm
