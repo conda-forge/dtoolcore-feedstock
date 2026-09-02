@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: dtoolcore
+  version: 3.19.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 32de6dda319002d41fc8a0b7a8835a1de37d9ca60265bf3416bc57caaba0b9f5
+
+build:
+  number: 2
+  noarch: python
+  script: SETUPTOOLS_SCM_PRETEND_VERSION=${{ version }} ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+    - setuptools_scm
+  run:
+    - setuptools
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - dtoolcore
+        - dtoolcore.compare
+        - dtoolcore.filehasher
+        - dtoolcore.storagebroker
+        - dtoolcore.utils
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: MIT
+  license_file: LICENSE.rst
+  summary: The dtoolcore project provides a Python API for managing (scientific) data.
+  description: |
+    The dtoolcore project provides a Python API for managing (scientific) data.
+    It allows researchers to:
+    * Package data and metadata into a dataset
+    * Organise and backup datasets easily
+    * Find datasets of interest
+    * Verify the contents of datasets
+    * Discover and work with data programatically
+  homepage: https://github.com/jic-dtool/dtoolcore
+  repository: https://github.com/jic-dtool/dtoolcore
+  documentation: https://dtoolcore.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - pvanheus
+    - jan-janssen
+    - tjelvar-olsson
